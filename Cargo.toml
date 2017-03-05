@@ -1,9 +1,9 @@
 [package]
 name    = "is_prime"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["Alfie John <alfie@alfie.wtf>"]
 
-description   = "Arbitrary length prime number checker using the Miller-Rabin algorithm"
+description   = "Fast arbitrary length prime number checker using the Miller-Rabin primality test algorithm"
 documentation = "https://docs.rs/is_prime/"
 repository    = "https://github.com/alfiedotwtf/is_prime"
 
