@@ -1,6 +1,6 @@
 [package]
 name    = "is_prime"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Alfie John <alfie@alfie.wtf>"]
 
 description = "Arbitrary length prime number checker using the Miller-Rabin algorithm"
