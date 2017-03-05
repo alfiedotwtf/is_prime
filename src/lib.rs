@@ -18,7 +18,7 @@ pub fn is_prime_with_witnesses(n_str: &str, witnesses: usize) -> bool {
     let n          = Int::from_str_radix(n_str, 10).unwrap();
     let n_sub: Int = n.clone() - 1;
 
-    if n == 2 || n == 3 {
+    if n == 2 || n == 3 || n == 5 {
        return true;
     }
 
