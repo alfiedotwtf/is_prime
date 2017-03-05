@@ -1,1 +1,1 @@
-* Documentation and tests to come :)
+* Documentation to come :)
