@@ -1,11 +1,11 @@
 [package]
 name    = "is_prime"
-version = "1.0.2"
+version = "1.0.3"
 authors = ["Alfie John <alfie@alfie.wtf>"]
 
 description   = "Fast arbitrary length prime number checker using the Miller-Rabin primality test algorithm"
 documentation = "https://docs.rs/is_prime/"
-repository    = "https://github.com/alfiedotwtf/is_prime"
+repository    = "https://gitlab.com/alfiedotwtf/is_prime"
 
 license = "GPL-3.0/GFDL-1.3"
 
