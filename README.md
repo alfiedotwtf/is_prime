@@ -3,10 +3,9 @@
 Fast arbitrary length prime number checker using the Miller-Rabin primality test algorithm
 
 This module implements the [Miller-Rabin primality
-test](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test). Given
-an arbitrary length number specified within a string, apply the probabilistic
-algorithm to check if the number is composite. If the number is not composite,
-it may be prime.
+test](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test)
+algoritm. Given an arbitrary length integer specified within a string, apply
+the probabilistic algorithm to check if the integer may be prime.
 
 The documentation for this crate can be [found
 here](https://docs.rs/is_prime/).
@@ -17,9 +16,25 @@ here](https://docs.rs/is_prime/).
     use is_prime::*;
 
     fn main() {
-      for i in 0..42 {
-        println!("Is {} prime? {}", i, is_prime(i.to_string().as_str()));
-      }
+      //
+      // Without witnesses...
+      //
+
+      // The first RSA Prime
+      assert!(is_prime("37975227936943673922808872755445627854565536638199") == true);
+
+      // The first RSA Prime + 1
+      assert!(is_prime("37975227936943673922808872755445627854565536638200") == false);
+
+      //
+      // With witnesses...
+      //
+
+      // The first RSA Prime
+      assert!(is_prime_with_witnesses("37975227936943673922808872755445627854565536638199", 5) == true);
+
+      // The first RSA Prime + 1
+      assert!(is_prime_with_witnesses("37975227936943673922808872755445627854565536638200", 10) == false);
     }
 
 # Support

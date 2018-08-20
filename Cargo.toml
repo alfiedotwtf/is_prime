@@ -1,13 +1,14 @@
 [package]
-name    = "is_prime"
-version = "1.0.4"
-authors = ["Alfie John <alfie@alfie.wtf>"]
+name        = "is_prime"
+version     = "1.0.5"
+authors     = ["Alfie John <alfie@alfie.wtf>"]
+description = "Fast arbitrary length prime number checker using the Miller-Rabin primality test algorithm"
+license     = "GPL-3.0/GFDL-1.3"
 
-description   = "Fast arbitrary length prime number checker using the Miller-Rabin primality test algorithm"
 documentation = "https://docs.rs/is_prime/"
+homepage      = "https://crates.io/crates/is_prime"
 repository    = "https://gitlab.com/alfiedotwtf/is_prime"
-
-license = "GPL-3.0/GFDL-1.3"
+readme        = "README.md'
 
 [dependencies]
 ramp = "0.5.0"

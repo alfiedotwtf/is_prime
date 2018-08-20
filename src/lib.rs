@@ -1,7 +1,67 @@
+//! Fast arbitrary length prime number checker using the Miller-Rabin primality test algorithm
+//!
+//! This module implements the [Miller-Rabin primality
+//! test](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test) algorithm. Given an
+//! arbitrary length integer specified within a string, apply the probabilistic algorithm to check
+//! if the integer may be prime.
+//!
+//! # Examples
+//!
+//!```
+//!extern crate is_prime;
+//!
+//!use is_prime::*;
+//!
+//!fn main() {
+//!    //
+//!    // Without witnesses...
+//!    //
+//!
+//!    // The first RSA Prime
+//!    assert!(is_prime("37975227936943673922808872755445627854565536638199") == true);
+//!
+//!    // The first RSA Prime + 1
+//!    assert!(is_prime("37975227936943673922808872755445627854565536638200") == false);
+//!
+//!    //
+//!    // With witnesses...
+//!    //
+//!
+//!    // The first RSA Prime
+//!    assert!(is_prime_with_witnesses("37975227936943673922808872755445627854565536638199", 5) == true);
+//!
+//!    // The first RSA Prime + 1
+//!    assert!(is_prime_with_witnesses("37975227936943673922808872755445627854565536638200", 10) == false);
+//!}
+//!```
+
+/// This code was translated from https://rosettacode.org/wiki/Miller%E2%80%93Rabin_primality_test#Perl
+
 extern crate ramp;
 
 use ramp::int::Int;
 
+/// Tests if the given integer within a string is prime
+///
+/// # Parameters
+///
+/// `n_str` is the string containing the integer to test its primality
+///
+/// # Examples
+///
+///```
+///extern crate is_prime;
+///
+///use is_prime::*;
+///
+///fn main() {
+///    // The first RSA Prime
+///    assert!(is_prime("37975227936943673922808872755445627854565536638199") == true);
+///
+///    // The first RSA Prime + 1
+///    assert!(is_prime("37975227936943673922808872755445627854565536638200") == false);
+///}
+///```
 pub fn is_prime(n_str: &str) -> bool {
     let mut witnesses = n_str.len();
 
@@ -12,7 +72,29 @@ pub fn is_prime(n_str: &str) -> bool {
     is_prime_with_witnesses(n_str, witnesses)
 }
 
-// translated from https://rosettacode.org/wiki/Miller%E2%80%93Rabin_primality_test#Perl
+/// Tests if the given integer within a string is prime with witnesses
+///
+/// # Parameters
+///
+/// `n_str` is the string containing the integer to test its primality
+///
+/// `witnesses` is the number of primality tests to run (the higher the better). Default: 3
+///
+/// # Examples
+///
+///```
+///extern crate is_prime;
+///
+///use is_prime::*;
+///
+///fn main() {
+///    // The first RSA Prime
+///    assert!(is_prime_with_witnesses("37975227936943673922808872755445627854565536638199", 5) == true);
+///
+///    // The first RSA Prime + 1
+///    assert!(is_prime_with_witnesses("37975227936943673922808872755445627854565536638200", 10) == false);
+///}
+///```
 pub fn is_prime_with_witnesses(n_str: &str, witnesses: usize) -> bool {
     let two        = Int::from_str_radix("2", 10).unwrap();
     let n          = Int::from_str_radix(n_str, 10).unwrap();
