@@ -41,7 +41,7 @@ here](https://docs.rs/is_prime/).
 
 Please report any bugs or feature requests at:
 
-* [https://gitlab.com/alfiedotwtf/is_prime/issues](https://gitlab.com/alfiedotwtf/is_prime/issues)
+* [https://github.com/alfiedotwtf/is_prime/issues](https://github.com/alfiedotwtf/is_prime/issues)
 
 Feel free to fork the repository and submit pull requests :)
 
@@ -55,7 +55,7 @@ IT COMES WITHOUT WARRANTY OF ANY KIND.
 
 # Copyright and License
 
-Perpetual Copyright (C) by Alfie John
+Copyright (C) 2021 by Alfie John
 
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU General Public License and GNU Free Documentation License
