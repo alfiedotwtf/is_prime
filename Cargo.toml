@@ -11,4 +11,5 @@ repository    = "https://github.com/alfiedotwtf/is_prime"
 readme        = "README.md"
 
 [dependencies]
-ramp = "0.5.0"
+num-bigint = "=0.4"
+num-traits = "=0.2"
