@@ -10,31 +10,20 @@ the probabilistic algorithm to check if the integer may be prime.
 The documentation for this crate can be [found
 here](https://docs.rs/is_prime/).
 
+*Note: This crate now uses `num-bigint` rather than `ramp`, allowing it to work
+with Stable rather than only Nightly*
+
 # Examples
 
     extern crate is_prime;
     use is_prime::*;
 
     fn main() {
-      //
-      // Without witnesses...
-      //
-
       // The first RSA Prime
       assert!(is_prime("37975227936943673922808872755445627854565536638199") == true);
 
       // The first RSA Prime + 1
       assert!(is_prime("37975227936943673922808872755445627854565536638200") == false);
-
-      //
-      // With witnesses...
-      //
-
-      // The first RSA Prime
-      assert!(is_prime_with_witnesses("37975227936943673922808872755445627854565536638199", 5) == true);
-
-      // The first RSA Prime + 1
-      assert!(is_prime_with_witnesses("37975227936943673922808872755445627854565536638200", 10) == false);
     }
 
 # Support
