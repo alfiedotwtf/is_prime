@@ -1,6 +1,6 @@
 [package]
 name        = "is_prime"
-version     = "2.0.8"
+version     = "2.0.9"
 authors     = ["Alfie John <alfie@alfie.wtf>"]
 description = "Fast arbitrary length prime number checker using the Miller-Rabin primality test algorithm"
 license     = "GPL-3.0/GFDL-1.3"
